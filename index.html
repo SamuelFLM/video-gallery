@@ -4,41 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player de Vídeo com Miniatura Flutuante</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="header"></div>
+    
 
-      <div class="main-player" id="mainPlayer">
-        <video id="mainVideo" controls></video>
-        <div class="video-controls">
-          <div id="videoTitle" class="video-title-display"></div>
-          <select class="resolution-selector" id="resolutionSelector">
-            <option value="360">360p</option>
-            <option value="480">480p</option>
-            <option value="720" selected>720p</option>
-            <option value="1080">1080p</option>
-          </select>
-        </div>
-      </div>
-
+    <main>
       <div class="video-list" id="videoList">
         <!-- Os itens de vídeo serão inseridos aqui via JavaScript -->
       </div>
-    </div>
 
-    <div class="floating-player" id="floatingPlayer">
-      <video id="floatingVideo" controls></video>
-      <div class="floating-player-controls">
-        <button class="control-button" id="closeFloating">X</button>
-        <div>
-          <button class="control-button" id="minimizeFloating">-</button>
-          <button class="control-button" id="maximizeFloating">↗</button>
+      <div class="container">
+        <div class="header"></div>
+  
+        <div class="main-player" id="mainPlayer">
+          <video id="mainVideo" controls></video>
+          <div class="video-controls">
+            <div id="videoTitle" class="video-title-display"></div>
+            <select class="resolution-selector" id="resolutionSelector">
+              <option value="360">360p</option>
+              <option value="480">480p</option>
+              <option value="720" selected>720p</option>
+              <option value="1080">1080p</option>
+            </select>
+          </div>
+        </div>
         </div>
       </div>
-      <div class="resize-handle" id="resizeHandle"></div>
-    </div>
+
+    </main>
 
     <script src="data.js"></script>
     <script src="app.js"></script>

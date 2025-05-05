@@ -5,12 +5,12 @@ const app = express();
 const port = 3000;
 
 // Pasta onde os vídeos estarão armazenados
-const VIDEOS_FOLDER = path.join(__dirname, "Figma");
+const VIDEOS_FOLDER = path.join(__dirname, "Mensageria");
 
 // Servir arquivos estáticos da pasta atual
 app.use(express.static(__dirname));
 // Servir arquivos de vídeo da pasta 'videos'
-app.use("/videos", express.static(path.join(__dirname, "Figma")));
+app.use("/videos", express.static(path.join(__dirname, "Mensageria")));
 
 // Endpoint para obter a lista de vídeos
 app.get("/api/videos", (req, res) => {

@@ -36,19 +36,20 @@ function renderVideoList() {
   let videosOrderBy = videos.sort(
     (a, b) => new Date(a.vdatime) - new Date(b.vdatime)
   );
-
+  let count = 1;
   videosOrderBy.forEach((video) => {
     const videoItem = document.createElement("div");
     videoItem.className = "video-item";
+    // <img class="video-thumbnail" src="${video.thumbnail}" alt="${video.title}">
+    // <div class="video-description">${video.description}</div>
     videoItem.innerHTML = `
-            <img class="video-thumbnail" src="${video.thumbnail}" alt="${video.title}">
             <div class="video-info">
-                <div class="video-title">${video.title}</div>
-                <div class="video-description">${video.description}</div>
+                <div class="video-title">${count}. ${video.title}</div>
             </div>
         `;
     videoItem.addEventListener("click", () => playVideo(video));
     videoList.appendChild(videoItem);
+    count++;
   });
 }
 
@@ -57,12 +58,12 @@ window.renderVideoList = renderVideoList;
 
 // Reproduzir um vídeo no player principal
 function playVideo(video) {
-  const titleItem = document.getElementsByClassName("header")[0];
-  if (titleItem) {
-    titleItem.innerHTML = `
-          <h1>${video.title}</h1>
-      `;
-  }
+  // const titleItem = document.getElementsByClassName("header")[0];
+  // if (titleItem) {
+  //   titleItem.innerHTML = `
+  //         <h1>${video.title}</h1>
+  //     `;
+  // }
 
   currentVideo = video;
   mainPlayer.style.display = "block";
